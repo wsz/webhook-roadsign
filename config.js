@@ -1,12 +1,12 @@
 module.exports = {
-  baseUrl: 'http://hostname',
+  baseUrl: process.env.BASE_URL,
   routes: {
     'USAePay notifications for LMS LTO team': {
       class: 'StatusIoToSlack',
       options: {
         service: 'USAePay',
-        webhook: 'http://localhost:8080/',
-        channel: '#sky_lmslto',
+        webhook: process.env.USAEPAY_WEBHOOK,
+        channel: process.env.USAEPAY_CHANNEL,
         username: 'USAePay webhook',
         iconEmoji: ':hammer_and_wrench:',
       },
