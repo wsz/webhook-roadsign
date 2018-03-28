@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: process.env.BASE_URL,
+  baseUrl: process.env.BASE_URL || '',
   routes: {
     'USAePay notifications for LMS LTO team': {
       class: 'StatusIoToSlack',
