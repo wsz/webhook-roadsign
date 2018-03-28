@@ -21,8 +21,13 @@ function slugifyWords(words) {
 Object.keys(config.routes).forEach((routeName) => {
   /* eslint-disable global-require, import/no-dynamic-require */
   const route = config.routes[routeName]
-  const words = hw.hash(JSON.stringify(route))
-  const slug = slugifyWords(words)
+  let slug = ''
+  if (!route.resource) {
+    const words = hw.hash(JSON.stringify(route))
+    slug = slugifyWords(words)
+  } else {
+    slug = route.resource
+  }
   const Router = require(`./routers/${route.class}`)
   const router = new Router(route.options)
 
