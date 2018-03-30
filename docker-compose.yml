@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  app:
+    container_name: webhook-roadsign
+    restart: unless-stopped
+    env_file:
+      - .env
+    stop_signal: SIGKILL
+    build:
+      context: .
+

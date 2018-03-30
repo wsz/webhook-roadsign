@@ -4,6 +4,10 @@ const bodyParser = require('body-parser')
 const hashwords = require('hashwords')
 const config = require('./config')
 
+process.on('SIGINT', () => {
+  process.exit()
+})
+
 const app = express()
 const hw = hashwords({
   salt: 'salt',

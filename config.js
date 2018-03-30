@@ -3,8 +3,8 @@ module.exports = {
   routes: {
     'USAePay notifications for LMS LTO team': {
       class: 'StatusIoToSlack',
+      resource: 'lto-usaepay',
       options: {
-        resource: 'lto-usaepay',
         service: 'USAePay',
         webhook: process.env.USAEPAY_WEBHOOK,
         channel: process.env.USAEPAY_CHANNEL,
